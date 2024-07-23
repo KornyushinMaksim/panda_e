@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" type="text/css" media="all" href="/static/style.css" th:href="@{/style.css}" />
+</head>
+
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="headerInner">
+                <a href="/">
+                    <div class="logo">
+                        <img src="/images/logo_panda.jpeg">
+                    </div>
+                </a>
+                <div id="headerMenu">
+                    <!-- Здесь будет отображаться хедер в зависимости от роли -->
+                </div>
+                <div class="search-profile">
+                    <!-- <div class="headerSearch">
+                        <input type="text" placeholder="Искать">
+                        <button class="search">Поиск</button>
+                    </div> -->
+                    <div class="headerProfile">
+                        
+                        <img src="/images/logo_profile.png">
+
+                        <div id="profileHeader"   >
+                            <!-- <select name="">
+                                <option value="profile">Профиль</option>
+                                <option value="login">Войти</option>
+                                <option value="">3</option>
+                                <option value="exit">Выйти</option>
+                            </select> -->
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div id="admHead">
+            </div>
+
+        </div>
+
+        <!-- Body -->
+        <div class="containerBody">
+            <div class="table">
+                <div id="propertiesFile">
+                    <div id="taskDetails">
+                        asdfkj
+                        <div>
+                            in container
+                        </div>
+                        <!-- Здесь будет отображаться подробная информация о задаче -->
+                    </div>
+
+                    <div class="commit">
+                        <div class="commitBtn">
+                            <div id="load">
+                                <!-- Здесь будет отображаться кнопка скачивания файла -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="commit">
+
+                        <div class="commitBtn">
+                            <button onclick="toggleVisibility(document.getElementById('comment').id)">Добавить
+                                комментарий</button>
+                        </div>
+
+                        <div id="comment" style="display: none;">
+                            <div class="containerDocAdd">
+                                <form id="commentForm">
+                                    <textarea name="commit" id="commentText" cols="30" rows="10"
+                                        placeholder="Комментарий"></textarea>
+                                    <div class="bottons">
+                                        <button onclick="toggleVisibility(document.getElementById('comment').id)"
+                                            type="submit" name="select" value="add">Отправить</button>
+                                        <button onclick="toggleVisibility(document.getElementById('comment').id),
+                                        cancelMyFormComment(document.getElementById('comment').id)" type="submit"
+                                            name="select" value="close">Отмена</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                        <div id="commentList">
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="/script.js"></script>
+    <script src="/scriptTask.js"></script>
+
+</body>
+
+</html>

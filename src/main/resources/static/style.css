@@ -1,0 +1,228 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a,
+a:active {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    color: blue;
+}
+
+label {
+    text-align: start;
+}
+
+.container {
+    width: 90%;
+    height: 100vh;
+    margin: 0 auto;
+    background-color: #e6e6e6;
+}
+
+.headerInner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0.3em 2.5%;
+    background-color: #e6e6e6;
+}
+
+.logo img{
+    width: 100px;
+    height: 100px;
+    /* background: url(/images/logo_panda.jpeg); */
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#headerMenu,
+.headerProfile
+/* .search-profile  */
+{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items:center;
+}
+
+.headerMenu div {
+    margin: 5px 15px;
+}
+
+select {
+    margin: 0 .5em;
+    margin-left: 2em;
+    text-decoration: none;
+    background-color: none;
+}
+
+.headerProfile img {
+    width: 40px;
+    height: 40px;
+    /* background: url(/images/logo_profile.jpeg); */
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 50px;
+}
+
+.containerBody {
+    width: 100%;
+    height: calc(100% - 14%);
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.login {
+    width: 300px;
+    height: min-content;
+    margin-top: 50px;
+    padding: 1em;
+    border: 1px solid black;
+    background-color: #e6e6e6;
+    box-shadow: 5px 5px 8px 5px rgba(34, 60, 80, 0.2);
+    z-index: 1;
+}
+
+.table,
+.contacts {
+    width: 95%;
+    /* height: auto; */
+    padding: 1em;
+    margin: 0px auto;
+    text-align: start;
+    border: 2px solid black;
+    background-color: #fff;
+    overflow: scroll;
+}
+
+table {
+    width: 95%;
+    margin: 20px;
+    border-collapse:collapse;
+}
+
+td,
+th {
+    padding: 5px;
+    border: 1px solid black;
+}
+
+thead tr {
+    background-color: #c3f1ff;
+}
+
+h3 {
+    margin: 1em;
+}
+button {
+    margin: 1em;
+    background: linear-gradient(#e6e6e6, #cecece);
+    border: 1px solid black;
+    border-radius: 3px;
+}
+
+.modalForm {
+    position: absolute;
+    top: 150px;
+    padding: 0 1em;
+    width: 600px;
+    border: 1px solid black;
+    background-color: #e6e6e6;
+    box-shadow: 5px 5px 8px 5px rgba(34, 60, 80, 0.2);
+    z-index: 1;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    /* align-items: center; */
+}
+
+input,
+button,
+textarea {
+    padding: 3px;
+}
+
+/* propertiesFile */
+.propertiesFile {
+    padding: 1em;
+    text-align: center;
+}
+
+.propertiesFileTitleBox {
+    display: grid;
+    grid-template-columns: 120px auto max-content;
+}
+
+#profileHeader {
+    margin-left: 1em;
+}
+
+.logoFile {
+    margin-right: 1em;
+    width: 80px;
+    height: 80px;
+}
+
+p {
+    color: gray;
+    font-size: 10pt;
+}
+
+.commit {
+    margin: 1em;
+    text-align: start;
+    border-bottom: 1px solid black;
+}
+
+.commitBtn {
+    text-align: end;
+}
+/* выпадающее меню */
+.u {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+.side-menu {
+    position:relative ;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #d8d8d8;
+    color: #fff;
+    padding-top: 20px;
+}
+
+.side-menu, u {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.side-menu, u, l {
+    padding: 10px 15px;
+    border-bottom: 1px solid #d8d8d8;
+}
+
+.side-menu, u, l:hover {
+    background-color: #d8d8d8;
+}
+
+.side-menu, u, l {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* конец выпадающее меню */

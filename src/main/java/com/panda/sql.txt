@@ -1,0 +1,93 @@
+Auth
+create table if not exists authentications (
+id uuid primary key,
+password varchar(100),
+login varchar(50),
+employee_id uuid references employees(id)
+)
+
+File
+create table if not exists file_to_database (
+id uuid primary key,
+name_file varchar(150),
+size_file numeric,
+type varchar(10),
+date_of_change timestamp,
+path_to_storage varchar(1000),
+is_active boolean,
+employee_id uuid references employees(id)
+)
+
+create table if not exists file_task (
+id uuid primary key,
+numbering bigserial,
+name_task varchar(100),
+file_id uuid references file_to_database(id),
+author_task varchar(100),
+customer_name varchar(100),
+dead_line date
+)
+
+ create table if not exists file_employee_relation (
+file_task_id uuid references file_task(id),
+employee_id uuid references employees(id)
+)
+
+create table if not exists comments (
+id uuid primary key,
+author_comment uuid references employees(id),
+file_task_id uuid references file_task(id),
+comment varchar(1000),
+date_comment date
+)
+
+Organisation
+create table if not exists addresses (
+id uuid primary key,
+city varchar(50),
+street varchar(70),
+home int,
+apartment int
+)
+
+create table if not exists humans (
+id uuid primary key,
+name_ varchar(20),
+surname varchar(30),
+patronymic varchar(30),
+birth_day date,
+number_phone varchar(20),
+email varchar(30),
+gender varchar(10),
+address_id uuid references addresses(id),
+employee_id uuid references employees(id)
+)
+
+create table if not exists authentications (
+id uuid primary key,
+password varchar(30),
+login varchar(40),
+employee_id uuid references employees(id)
+)
+
+create table if not exists departments (
+id uuid primary key,
+name_ varchar(20)
+)
+
+create table if not exists employees (
+id uuid primary key,
+name_ varchar(20),
+surname varchar(30),
+employment_date date,
+job_title varchar(25),
+human_id uuid,
+department_id uuid references departments(id),
+authentication_id uuid,
+role varchar(20)
+)
+
+create table if not exists customers (
+id uuid primary key,
+name_org varchar(100)
+)

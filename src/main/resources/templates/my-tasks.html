@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" type="text/css" media="all" href="/static/style.css" th:href="@{/style.css}" />
+</head>
+
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="headerInner">
+                <a href="/">
+                    <div class="logo">
+                        <img src="/images/logo_panda.jpeg">
+                    </div>
+                </a>
+                <div id="headerMenu">
+                    <!-- Здесь будет отображаться хедер в зависимости от роли -->
+                </div>
+                <div class="search-profile">
+                    <!-- <div class="headerSearch">
+                        <input type="text" placeholder="Искать">
+                        <button class="search">Поиск</button>
+                    </div> -->
+                    <div id="" class="headerProfile">
+                        <select name="">
+                            <option value="profile">Профиль</option>
+                            <option value="login">Войти</option>
+                            <option value="">3</option>
+                            <option value="exit">Выйти</option>
+                        </select>
+                        <img src="/images/logo_profile.png">
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div id="admHead">
+            </div>
+
+        </div>
+
+        <!-- Body -->
+        <div class="containerBody">
+            <div class="table">
+                <button id="createTask" onclick="toggleVisibility(document.getElementById('add-task').id)">Добавить
+                    задачу</button>
+                <button id="uploadFile" onclick="toggleVisibility(document.getElementById('upload-file').id)">Загрузить
+                    файл
+                    в хранилище</button>
+                <table>
+                    <thead>
+                        <tr>
+                            <th width="10%">№</th>
+                            <th width="auto">Имя</th>
+                            <th width="15%">Заказчик</th>
+                            <!-- <th width="10%">Исполнитель</th> -->
+                            <th width="15%">Дата</th>
+                            <!-- <th width="15%">Автор</th> -->
+                        </tr>
+                    </thead>
+                    <tbody id="tasksTableBody">
+
+                    </tbody>
+                </table>
+            </div>
+
+            <div id="upload-file" style="display: none;">
+
+                <h3>Загрузка файла в хранилище</h3>
+
+                <div class="containerDocAdd">
+                    <form id="upload-file-form">
+
+                        <div class="form-group">
+                            <label for="file">Файл для загрузки:</label>
+                            <input type="file" id="file" name="file">
+                        </div>
+
+                        <button value="createTask" onclick="uploadFile(),
+                            toggleVisibility(document.getElementById('upload-file').id)">
+                            Загрузить файл
+                        </button>
+                        <button value="cancel" onclick="toggleVisibility(document.getElementById('upload-file').id),
+                            cancelMyForm(document.getElementById('upload-file').id)">
+                            Отмена
+                        </button>
+
+                    </form>
+                </div>
+            </div>
+
+            <div id="add-task" style="display: none;">
+                <h3>Создание заявки</h3>
+                <div class="containerDocAdd">
+                    <form id="taskForm">
+
+                        <div class="form-group">
+                            <label for="taskName">Название задачи:</label>
+                            <input type="text" id="nameTask" name="nameTask">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="deadLine">Deadline:</label>
+                            <input type="date" id="deadLine" name="deadLine">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="customerId">Заказчик:</label>
+                            <select type="text" id="customerId" name="customerId">
+                                <option value="">Выберите файл</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="executors">Исполнители:</label>
+                            <select type="text" id="executors" name="executors">
+                                <option value="">Выберите файл</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="fileId">Выберите файл:</label>
+                            <select id="fileId" name="fileId">
+                                <option value="">Выберите файл</option>
+                            </select>
+                        </div>
+
+                        <button id="btn" value="createTask"
+                            onclick="toggleVisibility(document.getElementById('add-task').id)">
+                            Создать задачу
+                        </button>
+                        <button value="cancel" onclick="toggleVisibility(document.getElementById('add-task').id), 
+                            cancelMyForm(document.getElementById('taskForm').id)">
+                            Отменить создание
+                        </button>
+
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script th:src="@{/script.js}"></script>
+    <script th:src="@{/script-my-tasks.js}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+
+</body>
+
+</html>
